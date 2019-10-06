@@ -1,30 +1,4 @@
 # web-menu
-
-> a menu projec
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+一个简单的使用了Vux 和Vuex 的进行增删查改的demo
+使用 postcss-px2rem和lib-flexible做移动端的适配
+addition.vue 使用了Vant,其他都使用Vux;
