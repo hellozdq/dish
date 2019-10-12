@@ -1,17 +1,19 @@
-
 const app = {
   state: {
     form:{
-      sorts:0,
+      num:0,
       name:'',
       info:'',
       categoryId:'',
-      price:''
+      price:'',
+
     },
     dishForm:{},
     dishIndex:0,
     dishType:true, //ture 新增，false修改
-    dishData:[],
+    dishData:[
+      {num:1,name:'瘦肉汤',info:'主要食材：瘦肉',categoryId:'1', price:'10',picUrl:'/static/img/pic.jpg'}
+    ],
   },
   mutations: {
     SET_DISHFORM: ( state, data ) => {

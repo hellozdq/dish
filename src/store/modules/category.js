@@ -8,7 +8,9 @@ const app = {
     categoryForm:{},
     categoryIndex:0,
     categoryType:true, //ture 新增，false修改
-    categoryData:[]
+    categoryData:[
+      {categoryId:'1',categoryName:'汤',num:'1'}
+    ]
   },
   mutations: {
     SET_CATEGORYFORM: ( state, data ) => {

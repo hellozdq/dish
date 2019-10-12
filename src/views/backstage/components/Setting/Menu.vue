@@ -33,12 +33,12 @@
             content:[
               {
                 name:'菜品',
-                icon:'el-icon-user-solid',
+                icon:'iconfont icon-caipin',
                 url:'/dish',
               },
                {
                 name:'分类',
-                icon:'el-icon-user-solid',
+                icon:'iconfont icon-icon',
                 url:'/category',
               },
             ]
@@ -65,6 +65,7 @@
       .c_title{
         border-bottom: solid 1px #f5f5f5;
         padding: 10px;
+        font-size: 14px;
       }
       .c_main{
         display: -webkit-flex;
@@ -73,8 +74,7 @@
         justify-content:space-around;
         &_item{
           border-radius: 100%;
-          background: #1989FA;
-          font-size: 16px;
+          // background: #1989FA;
         }
       }
     }

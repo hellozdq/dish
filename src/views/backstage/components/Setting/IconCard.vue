@@ -33,11 +33,13 @@
     justify-content: center;
     text-align: center;
     .card_t{
-      font-size: 36px;
       padding: 3px;
+      .iconfont{
+        font-size: 36px;
+      }
     }
     .card_b{
-      font-size: 14px;
+      font-size: 16px;
       padding: 3px;
     }
   }

@@ -3,8 +3,8 @@
     <van-nav-bar :fixed="true" :title="dishType?'添加菜品':'修改菜品'" left-text="返回" right-text="保存" @click-left="back" @click-right="save" left-arrow />
     <main>
       <van-cell-group>
-        <!-- <van-field :label-width="lableWidth" label="序号" v-model="form.sorts" placeholder="请输入序号" /> -->
-        <van-field :label-width="lableWidth" label="序号" v-model="form.sorts" placeholder="请输入序号" />
+        <!-- <van-field :label-width="lableWidth" label="序号" v-model="form.num" placeholder="请输入序号" /> -->
+        <van-field :label-width="lableWidth" label="序号" v-model="form.num" placeholder="请输入序号" />
         <van-field :label-width="lableWidth" label="菜名" v-model="form.name" placeholder="请输入菜名" />
         <van-field :label-width="lableWidth" label="备注" v-model="form.info" type="textarea" placeholder="请输入备注" />
         <van-field :label-width="lableWidth" label="价格" v-model="form.price" placeholder="请输入价格" />
@@ -13,7 +13,7 @@
           readonly
           clickable
           label="分类"
-          :value="form.categoryId"
+          :value="form.categoryName"
           placeholder="选择分类"
           @click="showPicker = true"
         />
@@ -86,8 +86,12 @@
       this.dishType=this.$store.getters.dishType;
       if(!this.dishType){
         let pic={};
-        // pic.url=this.form.picUrl;
-        pic.content=this.form.picUrl;
+        if(this.form.picUrl.indexOf('data:')!=-1 && this.form.picUrl.indexOf('base64')!=-1){//是否base64
+          pic.content=this.form.picUrl;
+        }else{
+          pic.url=this.form.picUrl;
+        }
+
         this.fileList.push(pic);
       }
     },
@@ -97,7 +101,7 @@
           Toast('请上传图片！');
           return false;
         }
-        this.form.picUrl=this.fileList.url?this.fileList.url:this.fileList[0].content;
+        this.form.picUrl=this.fileList[0].url?this.fileList[0].url:this.fileList[0].content;
         this.$store.dispatch("setDishData",this.form);
         this.$router.push({ path:"/dish"});
         Toast.success('保存成功！');
@@ -115,7 +119,8 @@
       },
       onConfirm(value) {
         console.log(value)
-        this.form.categoryId = value.categoryName;
+        this.form.categoryId = value.categoryId;
+        this.form.categoryName = value.categoryName;
         this.showPicker = false;
       }
     }

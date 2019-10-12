@@ -1,0 +1,51 @@
+{
+  "id": "1455057",
+  "name": "webMenu",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "777845",
+      "name": "分类",
+      "font_class": "icon",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "1037704",
+      "name": "主页",
+      "font_class": "zhuye",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "1277683",
+      "name": "菜品",
+      "font_class": "caipin",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "1297625",
+      "name": "22_菜品分类",
+      "font_class": "22_caipinfenlei",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "1638203",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "6844413",
+      "name": "菜品设置",
+      "font_class": "caipinshezhi",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    }
+  ]
+}

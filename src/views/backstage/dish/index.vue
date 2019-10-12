@@ -12,7 +12,12 @@
             <div class="card_l"><img class="img" :src="item.picUrl" alt=""/></div>
             <div class="card_r">
               <div class="card_r_m">
-                <div class="dishName">{{item.name}}({{item.sorts}})</div>
+                <div class="dishName">
+                  <div>
+                    {{item.name}}
+                  </div>
+                  <div>{{item.categoryName}}({{item.num}})</div>
+                </div>
                 <div class="dishInfo">{{item.info}}</div>
               </div>
               <div class="card_r_f">
@@ -45,7 +50,17 @@
     },
     created() {
        this.categoryData=this.$store.getters.categoryData;
-       this.dishData=this.$store.getters.dishData;
+       const dishData=this.$store.getters.dishData;
+       console.log(dishData)
+       const that=this;
+       this.dishData=dishData.map(function(item){
+         console.log(item)
+         let form=JSON.parse(JSON.stringify(item));
+         form.categoryName=that.categoryData.filter(function(i){
+           return item.categoryId==i.categoryId;
+         })[0].categoryName
+         return form;
+       })
     },
     computed: {
     },
@@ -113,6 +128,8 @@
               .dishName{
                 font-size: 16px;
                 font-weight: bold;
+                display: flex;
+                justify-content: space-between;
               }
               .dishInfo{
                 font-size:12px;
